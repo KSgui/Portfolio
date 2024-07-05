@@ -356,9 +356,11 @@ li:hover::after {
     height: 75%;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    row-gap: 40px;
+    grid-template-rows: repeat(4, 1fr);
+    row-gap: 20px;
     margin-bottom: 100px;
-    column-gap: 40px;
+    /* column-gap: 40px; */
+    z-index: 2;
 }
 
 .exp-nav{
@@ -366,38 +368,55 @@ li:hover::after {
 }
 
 .right2{
-    margin-left: 25%;
-}
-
-.right3{
-    margin-left: 50%;
+    margin-left: 60%;
+    justify-content: center;
+    display: flex;
+    justify-content: space-between;
 }
 
 .expert-card{
-    width: 610px;
-    height: 180px;
+    width: 510px;
+    height: 140px;
     background-image: linear-gradient(225deg, #304352 50%, #d7d2cc 100%);
     border-radius: 8px;
     display: flex;
     align-items: center;
+    justify-content: center;
     transition: 0.2s;
 }
 
 .expert-card:hover{
     box-shadow: 0 0 0 6px #fff,
     0 0 0 10px #fff;
+    .traco{
+        display: flex;
+    }
+    .circulo{
+        display: flex;
+    }
+    .traco2{
+        display: flex;
+    }
+    .circulo2{
+        display: flex;
+    }
 }
 
 .expert-image{
-    width: 150px;
-    height: 150px;
+    width: 110px;
+    height: 110px;
     position: relative;
-    border-radius: 8px;
+    border-radius: 10px;
     right: 10px;
     top: 7px;
     padding-left: 15px;
 }
 
+.SDR{
+    width: 150px;
+    height: 80px; 
+    margin-left: 30px;
+}
 
 .h2h2{
     font-family: 'Oswald', sans-serif;
@@ -408,12 +427,112 @@ li:hover::after {
     padding-left: 5px;
 }
 
-.expert-text{
+.traco{
+    width: 200px;
+    height: 30px;
+    display: none;
+    background-color: white;
+    position: absolute;
+    animation-name: test1;
+    animation-duration: 1.7s;
+    animation-fill-mode: forwards;
+    z-index: -1;
+}
+
+.circulo{
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    animation-name: test2;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    z-index: -1;
+    font-family: 'Oswald', sans-serif;
+}
+
+@keyframes test1 {
+    from{
+        margin-right: 0%;
+    }
+
+    to{
+        margin-left: 500px;
+    }
+}
+
+@keyframes test2 {
+    from{
+        margin-right: 0%;
+    }
+
+    to{
+        margin-left: 750px;
+    }
+}
+
+.traco2{
+    width: 200px;
+    height: 30px;
+    display: none;
+    background-color: white;
+    position: absolute;
+    animation-name: test11;
+    animation-duration: 1.7s;
+    animation-fill-mode: forwards;
+    z-index: -1;
+}
+
+.circulo2{
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    animation-name: test22;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    z-index: -1;
+    font-family: 'Oswald', sans-serif;
+}
+
+@keyframes test11 {
+    from{
+        margin-right: 0%;
+    }
+
+    to{
+        margin-left: -500px;
+    }
+}
+
+@keyframes test22 {
+    from{
+        margin-right: 0%;
+    }
+
+    to{
+        margin-left: -750px;
+    }
+}
+
+
+
+/* .expert-text{
     font-family: 'Oswald', sans-serif;
     color: #fff;
     font-size:15px;
     padding-left: 5px;
-}
+} */
 
 .form-container{
     width: 100%;
@@ -567,9 +686,6 @@ footer{
         text-align: center;
     }
 
-  
-
-
     .profile-container{
         display: grid;
         grid-template-rows: 2, 1fr;
@@ -720,8 +836,8 @@ footer{
 
     .expert-card{
         position: relative;
-        width: 300px;
-        margin-left: -70px;
+        width: 350px;
+        /* margin-left: -30px; */
         margin-top: 0;
     }
 
@@ -731,11 +847,7 @@ footer{
     }
 
     .right2{
-        margin-left: -10px;
-    }
-
-    .right3{
-        margin-left: 35px;
+        margin-left: 0;
     }
 
     .expert-image{
@@ -748,9 +860,13 @@ footer{
         justify-content: center;
         align-items: center;
         margin-left: -10px;
+        font-size: 20px;
     }
 
 
+    .circulo, .circulo2, .traco, .traco2{
+        animation: test22, test11 none;
+    }
 
     .form-center{
         width: 85%;
